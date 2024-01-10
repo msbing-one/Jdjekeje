@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Time</title>
+    <title>Website Redirect</title>
 </head>
 <body>
 
@@ -13,19 +13,14 @@
 function updateTime() {
     var currentTime = new Date();
     var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
 
-    // Add leading zeros if needed
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    var formattedTime = hours + ':' + minutes + ':' + seconds;
-    
-    document.getElementById('currentTime').innerHTML = 'Current Time: ' + formattedTime;
-
-    // Update every second
-    setTimeout(updateTime, 1000);
+    if (hours > 15) {
+        // If current time is more than 15 hours, open Website 1
+        window.location.href = 'https://www.google.com';
+    } else {
+        // If current time is 15 hours or less, open Website 2
+        window.location.href = 'https://www.bing.com';
+    }
 }
 
 // Initial call to start the clock
