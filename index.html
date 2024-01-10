@@ -3,27 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Current Time</title>
+  <title>Current Hour</title>
   <script>
-    function updateTime() {
-      var currentTime = new Date();
-      var hours = currentTime.getHours();
-      var minutes = currentTime.getMinutes();
-      var seconds = currentTime.getSeconds();
-
-      // Add leading zero if needed
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      var timeString = hours + ":" + minutes + ":" + seconds;
-      document.getElementById("time").innerHTML = timeString;
+    function updateHour() {
+      var currentHour = new Date().getHours();
+      document.getElementById("hour").innerHTML = currentHour;
     }
 
-    setInterval(updateTime, 1000); // Update every second
+    updateHour(); // Initial call to display the current hour
   </script>
 </head>
 <body>
-  <h1>Current Time:</h1>
-  <p id="time"></p>
+  <h1>Current Hour:</h1>
+  <p id="hour"></p>
 </body>
 </html>
