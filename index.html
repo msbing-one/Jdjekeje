@@ -10,7 +10,11 @@
       document.getElementById("hour").innerHTML = currentHour;
     }
 
-    updateHour(); // Initial call to display the current hour
+    // Initial call to display the current hour
+    updateHour();
+
+    // Update the hour every hour (3600000 milliseconds)
+    setInterval(updateHour, 3600000);
   </script>
 </head>
 <body>
