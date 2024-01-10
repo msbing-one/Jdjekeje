@@ -12,19 +12,20 @@
 <script>
 function updateTime() {
     var currentTime = new Date();
-    var hours = currentTime.getHours();
+    var hours = currentTime.getUTCHours();
 
-    if (hours > 22) {
-        // If current time is more than 15 hours, open Website 1
-        window.location.href = 'https://www.bing.com';
-    } else {
-        // If current time is 15 hours or less, open Website 2
+    if (hours >= 15) {
+        // If current time is 15 hours or more, open Website 1
         window.location.href = 'https://www.google.com';
+    } else {
+        // If current time is less than 15 hours, open Website 2
+        window.location.href = 'https://www.bing.com';
     }
 }
 
 // Initial call to start the clock
 updateTime();
+    
 </script>
 
 </body>
